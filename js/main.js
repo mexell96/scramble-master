@@ -203,7 +203,7 @@ function move(e) {
           .then((response) => response.json())
           .then((json) => console.log(json));
       }
-      window.requestAnimationFrame(draw);
+      draw();
       moves += 1;
     }
   }
