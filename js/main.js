@@ -112,6 +112,43 @@ function getNeighbour(pos) {
   return neighbour;
 }
 
+function createImg(src) {
+  const img = document.createElement("img");
+  img.src = src;
+  return img;
+}
+
+let arrOfThree = [
+  "../images/three/0.jpg",
+  "../images/three/1.jpg",
+  "../images/three/2.jpg",
+  "../images/three/3.jpg",
+  "../images/three/4.jpg",
+  "../images/three/5.jpg",
+  "../images/three/6.jpg",
+  "../images/three/7.jpg",
+  "../images/three/8.jpg",
+].map((item) => createImg(item));
+
+let arrOfFour = [
+  "../images/four/0.jpg",
+  "../images/four/1.jpg",
+  "../images/four/2.jpg",
+  "../images/four/3.jpg",
+  "../images/four/4.jpg",
+  "../images/four/5.jpg",
+  "../images/four/6.jpg",
+  "../images/four/7.jpg",
+  "../images/four/8.jpg",
+  "../images/four/9.jpg",
+  "../images/four/10.jpg",
+  "../images/four/11.jpg",
+  "../images/four/12.jpg",
+  "../images/four/13.jpg",
+  "../images/four/14.jpg",
+  "../images/four/15.jpg",
+].map((item) => createImg(item));
+
 function draw() {
   ctx.clearRect(0, 0, width, height);
   ctx.strokeStyle = "black";
@@ -133,10 +170,10 @@ function draw() {
           ctx.drawImage(image, x + 5, y + 5);
         };
         if (type === "three") {
-          image.src = `../images/three/${piece}.jpg`;
+          image.src = arrOfThree[piece].src;
         }
         if (type === "four") {
-          image.src = `../images/four/${piece}.jpg`;
+          image.src = arrOfFour[piece].src;
         }
       }
     }
